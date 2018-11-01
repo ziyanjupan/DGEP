@@ -1,0 +1,98 @@
+﻿body, ul, p, h1, h2, h3, h4, h5, h6, dl, dd, form, input, textarea, select {
+    padding: 0;
+    margin: 0;
+    font-size: 0.26rem
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border: none;
+    vertical-align: top;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+    .clearfix:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+html {
+    font-size: 100px;
+}
+/* 主题 */
+.dghb_theme {
+    font-size: 0.32rem;
+    text-align: center;
+    margin-top: 0.32rem;
+}
+/* 地址 */
+.dghb_address, .dghb_contacts, .dghb_time {
+    padding: 0 1rem;
+    border-bottom: 4px solid #ececec;
+    margin-top: 0.68rem;
+}
+
+.dghb_address_tip {
+    height: 0.4rem;
+    line-height: 0.4rem;
+    margin-bottom: 0.2rem;
+}
+
+    .dghb_address_tip .dghb_address_tip_img {
+        width: 0.28rem;
+        height: 0.28rem;
+        background: url('../../Content/imgs/home.png') no-repeat;
+        background-size: cover;
+        float: left;
+        margin: 0.06rem;
+    }
+
+    .dghb_address_tip .dghb_address_tip_txt {
+        /* line-height: 0.2rem; */
+    }
+/* dghb_address_community */
+.dghb_address_community, .dghb_address_roomNumber {
+    border-bottom: 2px solid #ececec;
+    margin-bottom: 0.2rem;
+}
+
+
+.dghb_address_community_inp, .dghb_address_roomNumber_inp {
+    border: none;
+    outline: none;
+    padding-left: 0.22rem;
+}
+/* 联系方式 */
+.dghb_contacts .dghb_address_tip_img {
+    background: url('../../Content/imgs/number.png') no-repeat;
+    background-size: cover;
+}
+/* 服务时间 */
+.dghb_time_img {
+    background: url('../../Content/imgs/dghb_time.png') no-repeat;
+    background-size: cover;
+}
+/* 提交 */
+.dghb_submit {
+    width: 2rem;
+    height: 0.42rem;
+    background: red;
+    text-align: center;
+    line-height: 0.42rem;
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 0.6rem;
+    border-radius: 0.16rem;
+    font-size: 0.22rem;
+}
