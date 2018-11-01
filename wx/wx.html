@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 640*100 + 'px';
+    </script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,ul,p,h1,h2,h3,h4,h5,h6,dl,dd,form,input,textarea,select{padding:0; margin:0;font-size: 0.26rem}
+        li{list-style:none;}
+        img{border:none;vertical-align:top;}
+        a{text-decoration:none;}
+        .clearfix{*zoom:1;}
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        html{
+            font-size: 100px;
+        }
+        /* 主题 */
+        .dghb_theme{
+            font-size: 0.32rem;
+            text-align: center;
+            margin-top: 0.32rem;
+        }
+        /* 地址 */
+        .dghb_address,.dghb_contacts,.dghb_time{
+            padding: 0 1rem;
+            border-bottom: 4px solid #ececec;
+            margin-top: 0.68rem;
+        }
+        .dghb_address_tip{
+            height: 0.4rem;
+            line-height: 0.4rem;
+            margin-bottom: 0.2rem;
+        }
+        .dghb_address_tip .dghb_address_tip_img{
+            width: 0.28rem;
+            height: 0.28rem;
+            background: url(imgs/home.png) no-repeat;
+            background-size: cover;
+            float: left;
+            margin: 0.06rem;
+        }
+        .dghb_address_tip .dghb_address_tip_txt{
+            /* line-height: 0.2rem; */
+        }
+        /* dghb_address_community */
+        .dghb_address_community,.dghb_address_roomNumber{
+            border-bottom: 2px solid #ececec;
+            margin-bottom: 0.2rem;
+        }
+        .dghb_address_community_inp,.dghb_address_roomNumber_inp{
+            border: none;
+            outline: none;
+            padding-left: 0.22rem; 
+        }
+        /* 联系方式 */
+        .dghb_contacts .dghb_address_tip_img{
+            background: url(imgs/number.png) no-repeat;
+            background-size: cover;
+        }
+        /* 服务时间 */
+        .dghb_time_img{
+            background: url(imgs/dghb_time.png) no-repeat;
+            background-size: cover;
+        }
+        /* 提交 */
+        .dghb_submit{
+            width: 2rem;
+            height: 0.42rem;
+            background: red;
+            text-align: center;
+            line-height: 0.42rem;
+            color: #fff;
+            margin: 0 auto;
+            margin-top: 0.6rem;  
+            border-radius: 0.16rem;  
+            font-size: 0.22rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="dghb">
+        <!-- 主题 -->
+        <div class="dghb_theme">
+            东冠环保
+        </div>
+        <!-- 地址 -->
+        <div class="dghb_address">
+            <div class="dghb_address_tip">
+                <div class="dghb_address_tip_img"></div>
+                <span class="dghb_address_tip_txt">家庭住址</span>
+            </div>
+            <div class="dghb_address_community">
+                <label>小区</label>
+                <input type="text" class="dghb_address_community_inp community" placeholder="所在小区名称">
+            </div>
+            <div class="dghb_address_roomNumber">
+                <label>房号</label>
+                <input type="text" class="dghb_address_roomNumber_inp roomNumber" placeholder="详细居住地址">
+            </div>
+        </div>
+        <!-- 联系方式 -->
+        <div class="dghb_contacts">
+            <div class="dghb_address_tip">
+                <div class="dghb_address_tip_img dghb_address_tip_img"></div>
+                <span class="dghb_address_tip_txt">联系方式</span>
+            </div>
+            <div class="dghb_address_community">
+                <label>电话</label>
+                <input type="text" class="dghb_address_community_inp number" placeholder="请输入号码">
+            </div>
+            <div class="dghb_address_roomNumber">
+                <label>备注</label>
+                <input type="text" class="dghb_address_roomNumber_inp remark" placeholder="特殊情况请及时说明！">
+            </div>
+        </div>
+        <!-- 服务时间 -->
+        <div class="dghb_time">
+            <div class="dghb_address_tip">
+                <div class="dghb_address_tip_img dghb_time_img"></div>
+                <span class="dghb_address_tip_txt">服务时间（9：00~18：00）</span>
+            </div>
+            <div class="dghb_address_roomNumber">
+                <label>时间</label>
+                <input type="text" class="dghb_address_roomNumber_inp dghb_time_txt" placeholder="请输入服务时间！">
+            </div>
+        </div>
+        <!-- 提交 -->
+        <div class="dghb_submit">提交</div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        var dghb_submit = document.getElementsByClassName('dghb_submit')[0];
+        dghb_submit.onclick = function(){
+            //获取用户输入的值
+            var community = $('.community').val();
+            var roomNumber = $('.roomNumber').val();
+            var number = $('.number').val();
+            var remark = $('.remark').val();
+            var dghb_time = $('.dghb_time_txt').val();
+            //校验，给出输入为空或格式报错提示
+
+
+            //发送数据给后端，将数据存入数据库
+            $.ajax({
+                type: POST,   //提交的方式
+                url: '',  //传递到服务器的url
+                data: {    //发送的数据，以JSON数据传递
+                    community: community,//小区
+                    roomNumber: roomNumber,//房号
+                    number: number,//电话
+                    remark: remark,//备注
+                    dghb_time: dghb_time,//服务时间
+                },
+                success: function(json){   //成功之后执行的函数
+                    console.log(json)
+                    if(json.code == 200) {
+                        //成功之后
+
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
