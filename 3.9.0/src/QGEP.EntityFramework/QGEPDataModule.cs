@@ -14,6 +14,7 @@ namespace QGEP
             Database.SetInitializer(new CreateDatabaseIfNotExists<QGEPDbContext>());
 
             Configuration.DefaultNameOrConnectionString = "Default";
+            Configuration.UnitOfWork.IsolationLevel = System.Transactions.IsolationLevel.ReadCommitted;
         }
 
         public override void Initialize()
