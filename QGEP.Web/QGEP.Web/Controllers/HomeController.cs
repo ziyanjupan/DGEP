@@ -37,36 +37,37 @@ namespace QGEP.Web.Controllers
             return View();
         }
 
+        public string getMessage()
+        {
+            string text = base.Request.QueryString["echoStr"];
+            string text2 = base.Request.QueryString["signature"];
+            string text3 = base.Request.QueryString["timestamp"];
+            string text4 = base.Request.QueryString["nonce"];
+            bool flag = !string.IsNullOrEmpty(text);
+            if (flag)
+            {
+                base.Response.Write(text);
+                base.Response.End();
+            }
+            return text;
+        }
+
         //微信验证端口
-        public ActionResult WeiXin()
-        {
-            string echoStr = Request.QueryString["echoStr"];
-            string signature = Request.QueryString["signature"];
-            string timestamp = Request.QueryString["timestamp"];
-            string nonce = Request.QueryString["nonce"];
-            if (CheckSignature(token, signature, timestamp, nonce) && !string.IsNullOrEmpty(echoStr))
-            {
-                Response.Write(echoStr);
-                Response.End();
-            }
-            return View();
+        //public ActionResult WeiXin()
+        //{
+        //    string echoStr = Request.QueryString["echoStr"];
+        //    string signature = Request.QueryString["signature"];
+        //    string timestamp = Request.QueryString["timestamp"];
+        //    string nonce = Request.QueryString["nonce"];
+        //    if (CheckSignature(token, signature, timestamp, nonce) && !string.IsNullOrEmpty(echoStr))
+        //    {
+        //        Response.Write(echoStr);
+        //        Response.End();
+        //    }
+        //    return View();
 
-        }
+        //}
 
-        //微信密码验证
-        private static bool CheckSignature(string Token, string signature, string timestamp, string nonce)
-        {
-            string[] arrTmp = { Token, timestamp, nonce };
-            Array.Sort(arrTmp);
-            string tmpStr = string.Join("", arrTmp);
-            var sha1 = SHA1.Create();
-            string truePwd = BitConverter.ToString(sha1.ComputeHash(Encoding.UTF8.GetBytes(tmpStr)));
-            if (tmpStr != null)
-            {
-                tmpStr = tmpStr.ToLower();
-                return tmpStr == signature;
-            }
-            return false;
-        }
+
     }
 }
