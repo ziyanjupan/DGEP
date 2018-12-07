@@ -1,2 +1,2 @@
-# DGEP
-DGHB WeChat Project
+# QGEP
+QGHB WeChat Project
