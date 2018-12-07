@@ -462,6 +462,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Images\dghb_time.png" />
+    <Content Include="Content\Images\home.png" />
+    <Content Include="Content\Images\number.png" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -550,6 +553,7 @@
     <Content Include="css\themes\theme-teal.min.css" />
     <Content Include="css\themes\theme-yellow.css" />
     <Content Include="css\themes\theme-yellow.min.css" />
+    <Content Include="css\wx.css" />
     <Content Include="fonts\material-icons\materialicons.css" />
     <Content Include="fonts\roboto\roboto.css" />
     <Content Include="favicon.ico" />
@@ -560,6 +564,7 @@
     <Content Include="js\helpers.js" />
     <Content Include="js\main.js" />
     <Content Include="js\script.js" />
+    <Content Include="js\wx.js" />
     <Content Include="lib\animate.css\animate.css" />
     <Content Include="lib\animate.css\animate.min.css" />
     <Content Include="lib\animate.css\gulpfile.js" />
@@ -2743,6 +2748,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InviteController.cs" />
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\TenantsController.cs" />
@@ -2751,6 +2757,7 @@
     <Compile Include="Models\Account\TenantChangeModalViewModel.cs" />
     <Compile Include="Models\Account\TenantChangeViewModel.cs" />
     <Compile Include="Models\Common\Modals\ModalHeaderViewModel.cs" />
+    <Compile Include="Models\Customer\Customer.cs" />
     <Compile Include="Models\Layout\RightSideBarViewModel.cs" />
     <Compile Include="Models\Account\LoginFormViewModel.cs" />
     <Compile Include="Models\Account\LoginViewModel.cs" />
@@ -2891,6 +2898,7 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\Invite\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

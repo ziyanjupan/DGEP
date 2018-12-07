@@ -13,6 +13,7 @@ using QGEP.Api;
 using Castle.MicroKernel.Registration;
 using Hangfire;
 using Microsoft.Owin.Security;
+using Abp.Configuration.Startup;
 
 namespace QGEP.Web
 {
@@ -29,7 +30,7 @@ namespace QGEP.Web
         {
             //Enable database based localization
             Configuration.Modules.Zero().LanguageManagement.EnableDbLocalization();
-
+            Configuration.Modules.AbpWeb().AntiForgery.IsEnabled = false;
             //Configure navigation/menu
             Configuration.Navigation.Providers.Add<QGEPNavigationProvider>();
 
