@@ -20,6 +20,7 @@ namespace QGEP.Web.Controllers
 
         public JsonResult Submit(Customer person)
         {
+
             return Json(new { Code = "200", Msg = "测试，错误" });
 
         }
