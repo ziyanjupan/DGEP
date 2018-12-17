@@ -3,6 +3,7 @@ using System.Data.Entity;
 using Abp.Zero.EntityFramework;
 using QGEP.Authorization.Roles;
 using QGEP.Authorization.Users;
+using QGEP.Customers;
 using QGEP.MultiTenancy;
 
 namespace QGEP.EntityFramework
@@ -50,5 +51,6 @@ namespace QGEP.EntityFramework
             base.OnModelCreating(modelBuilder);
 
         }
+        public virtual DbSet<Customer> Customer { get; set; }
     }
 }

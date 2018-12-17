@@ -199,6 +199,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customers\Customer.cs" />
     <Compile Include="QGEPConsts.cs" />
     <Compile Include="QGEPCoreModule.cs" />
     <Compile Include="AppVersionHelper.cs" />

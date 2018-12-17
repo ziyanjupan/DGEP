@@ -219,6 +219,10 @@
   <ItemGroup>
     <Compile Include="EntityFramework\QGEPDbContext.cs" />
     <Compile Include="EntityFramework\Repositories\QGEPRepositoryBase.cs" />
+    <Compile Include="Migrations\201812172332123_AddTable.cs" />
+    <Compile Include="Migrations\201812172332123_AddTable.Designer.cs">
+      <DependentUpon>201812172332123_AddTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="QGEPDataModule.cs" />
     <Compile Include="Migrations\201809270654064_InitialMigrations.cs" />
     <Compile Include="Migrations\201809270654064_InitialMigrations.Designer.cs">
@@ -255,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810150846132_Upgraded_To_ABP_v3_9_0.resx">
       <DependentUpon>201810150846132_Upgraded_To_ABP_v3_9_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812172332123_AddTable.resx">
+      <DependentUpon>201812172332123_AddTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
